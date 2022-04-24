@@ -17,14 +17,6 @@ body {
 
 }
 
-header {
-
-}
-
-header h1 {
-
-}
-
 main {
 
 }
@@ -47,10 +39,6 @@ main section#keyBoard {
 }
 
 @media (max-width: 767px) {
-    header {
-        height: 45px;
-    }
-
     body {
 
     }
