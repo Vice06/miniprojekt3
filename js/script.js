@@ -72,6 +72,7 @@ function addComma() {
  * +, -, *, /
  */
 function setOperator(operator){
+    calculate();
         if(operator === 'a'){
             arithmetic = '+';
     
@@ -84,9 +85,8 @@ function setOperator(operator){
         } else if(operator === 'm'){
             arithmetic = '*';
     
-        } else{
-            calculate();
-        }
+        } 
+        
   
 
     
@@ -99,24 +99,28 @@ function calculate() {
     let result = 0;
     if(arithmetic === '+'){
         result = parseFloat(memory) + parseFloat(lcd.value);
-        memory = result - memory;
         lcd.value = result;
-        console.log(memory);
+        arithmetic = null;
         
     } else if(arithmetic === '-'){
         result = parseFloat(memory) - parseFloat(lcd.value);
-        
         lcd.value = result;
+        arithmetic = null;
+
         
     } else if(arithmetic === '*'){
         result = parseFloat(memory) * parseFloat(lcd.value);
         lcd.value = result;
+        arithmetic = null;
         
     } else if(arithmetic === '/'){
         result = parseFloat(memory) / parseFloat(lcd.value);
-        lcd.value = result;
-        
-    }  
+        lcd.value = result; 
+        arithmetic = null;
+    }  else{
+
+    }
+    
 }
 
 /** Rensar display */
